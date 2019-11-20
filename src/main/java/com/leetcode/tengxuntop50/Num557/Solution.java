@@ -11,12 +11,18 @@ public class Solution {
         //1.去除首尾的“”2.拆分
         String[] strings = s.replace("\"", "").split(" ");
 
+        /*
+        2.对拆分的每一个字符串 反转，调用 StringBuffer类的一个 reverse() 方法
+         */
         for (int i = 0; i < strings.length; i++) {
             StringBuffer stringBuffer = new StringBuffer(strings[i]);
             strings[i] = stringBuffer.reverse().toString();
         }
 
         String toReturn = "\"";
+        /*
+        3.拼接上中间的 空格
+         */
         for (int i = 0; i < strings.length; i++) {
             toReturn = toReturn + strings[i] + " ";
         }
